@@ -1,18 +1,14 @@
 [project]
 name = "testPdm"
-version = "1.0.0"
-description = "Test PDM"
+version = "0.1.0"
+description = "Default template for PDM package"
 authors = [
     {name = "Philip R Brenan", email = "philiprbrenan@gmail.com"},
 ]
 dependencies = []
-requires-python = ">=3"
+requires-python = "==3.10.*"
 readme = "README.md"
 license = {text = "MIT"}
-
-[build-system]
-requires = ["pdm-backend"]
-build-backend = "pdm.backend"
 
 [tool.pdm]
 distribution = true
