@@ -17,7 +17,7 @@ my $repo = q(testPDM);                                                          
 my $wf   = q(.github/workflows/main.yml);                                       # Work flow on Ubuntu
 
 if (1)                                                                          # Documentation from pod to markdown into read me with well known words expanded
- {push my @files, searchDirectoryTreesForMatchingFiles($home, qw(.toml .pl .py .toml .pdm-python));
+ {push my @files, searchDirectoryTreesForMatchingFiles($home, qw(.md .toml .pl .py .toml .pdm-python));
 
   for my $s(@files)                                                             # Upload each selected file
    {next if $s =~ m(\.pdm|\.venv);
