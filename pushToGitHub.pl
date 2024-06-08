@@ -70,6 +70,7 @@ jobs:
     - name: package
       run: |
         pdm init -n
+        cp pyproject2.toml pyproject.toml
         pdm build
         tree
 
