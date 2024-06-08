@@ -1,0 +1,55 @@
+# Test 2024-06-09 at 00:00:13
+
+name: Test
+run-name: Test Pdm
+
+on:
+  push:
+    paths:
+      - '**/main.yml'
+
+jobs:
+
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        ref: 'main'
+
+    - name: Python version
+      run: |
+        python3 -V
+
+    - name: Pip version
+      run: |
+        pip3 -V
+
+    - name: Install pdm
+      run: |
+        pip3 install pdm
+
+    - name: Install Tree
+      run: |
+        sudo apt install tree
+
+    - name: package
+      run: |
+        pdm init -n
+        pdm build
+        tree
+
+    - name: Install
+      run: |
+        sudo pip3 install dist/testpdm-1.0.0-py3-none-any.whl
+
+    - name: Show libraries
+      run: |
+        pip3 show -f testpdm
+        ls -la /usr/local/lib/python3.10/dist-packages/
+
+    - name: Run command line
+      run: |
+        testPdmAaa
+        testPdmBbb
