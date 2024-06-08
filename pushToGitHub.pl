@@ -70,13 +70,13 @@ jobs:
     - name: package
       run: |
         pdm init -n
-        cp pyproject2.toml pyproject.toml
+        cp pyproject2.toml pyproject.toml   # Use our description rather than the generated one
         pdm build
         tree
 
     - name: Install
       run: |
-        sudo pip3 install dist/testpdm-1.0.0-py3-none-any.whl
+        sudo pip3 install /home/runner/work/testPDM/testPDM/dist/testPdm-0.1.0-py3-none-any.whl
 
     - name: Show libraries
       run: |
